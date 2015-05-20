@@ -6,6 +6,10 @@ behave mswin
 set shiftwidth=4
 set tabstop=4
 set number
+set hlsearch
+set smartcase
+set incsearch
+
 colorscheme desert
 
 if has('gui_running')
