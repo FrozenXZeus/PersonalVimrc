@@ -4,16 +4,9 @@ call plug#begin()
 Plug 'flazz/vim-colorschemes'
 Plug 'kien/rainbow_parentheses.vim'
 
-" Start screen
-Plug 'mhinz/vim-startify'
-
 " I thought these were nice things...
 Plug 'tpope/vim-sensible'
 Plug 'scrooloose/nerdtree'
-Plug 'scrooloose/syntastic'
-
-" lul
-Plug 'idanarye/vim-vebugger'
 
 " The bar thingy below vim
 Plug 'vim-airline/vim-airline'
@@ -26,19 +19,11 @@ Plug 'airblade/vim-gitgutter'
 " ack/ag support
 Plug 'mileszs/ack.vim'
 
-" Clojure specific plugins
-Plug 'guns/vim-clojure-static'
-Plug 'guns/vim-clojure-highlight'
-Plug 'tpope/vim-fireplace'
-
 " C Specific plugins
 Plug 'xolox/vim-misc'
 Plug 'xolox/vim-easytags'
 Plug 'majutsushi/tagbar'
 
-" I have no idea what this one does
-Plug 'michaeljsmith/vim-indent-object'
-Plug 'Valloric/YouCompleteMe'
 call plug#end()
 
 " vim-airline
@@ -48,12 +33,6 @@ let g:airline#extensions#tabline#enabled = 1
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
-
-let g:syntastic_c_checkers = ['gcc']
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
 
 " Keys shortcut mappings
 map <F3> :NERDTreeToggle <CR>
