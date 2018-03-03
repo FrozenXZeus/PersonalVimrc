@@ -10,3 +10,5 @@ fi
 
 # User specific aliases and functions
 export PS1="\d-\t [\u@\h \w]\\n\$ "
+
+alias ls="ls --color=auto --group-directories-first"

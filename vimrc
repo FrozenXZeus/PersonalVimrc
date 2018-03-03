@@ -1,5 +1,6 @@
 " Currently set up for VimPlug
 call plug#begin()
+
 " Blinkey Lights
 Plug 'flazz/vim-colorschemes'
 Plug 'kien/rainbow_parentheses.vim'
@@ -7,6 +8,7 @@ Plug 'kien/rainbow_parentheses.vim'
 " I thought these were nice things...
 Plug 'tpope/vim-sensible'
 Plug 'scrooloose/nerdtree'
+Plug 'vim-syntastic/syntastic'
 
 " The bar thingy below vim
 Plug 'vim-airline/vim-airline'
@@ -24,15 +26,31 @@ Plug 'xolox/vim-misc'
 Plug 'xolox/vim-easytags'
 Plug 'majutsushi/tagbar'
 
+" Rust related plugins
+Plug 'rust-lang/rust.vim'
+Plug 'racer-rust/vim-racer'
+
 call plug#end()
 
+set mouse=a
 " vim-airline
 " Buffer bar
 let g:airline#extensions#tabline#enabled = 1
 
+" Rust Autoformat
+let g:rustfmt_autosave = 1
+
+" Syntastic settings
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+
+let g:syntastic_rust_checkers = ['cargo']
 
 " Keys shortcut mappings
 map <F3> :NERDTreeToggle <CR>
@@ -61,6 +79,7 @@ endif
 if has('gui_running')
     set guifont=Source\ Code\ Pro\ Semibold:h14
 endif
+
 
 " Rainbow parenthesis
 au VimEnter * RainbowParenthesesToggle
